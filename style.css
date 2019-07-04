@@ -1,0 +1,193 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+/* END CSS RESET * * * * * * * * * * * * * * * * END CSS RESET */
+
+a {
+    text-decoration: none;
+}
+li {
+    list-style-type: none;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    background-color: gray;
+    overflow-x: hidden;
+}
+.placeholder {
+    width: 75%;
+    height: 200px;
+    margin: 20px auto;
+    background-color: purple;
+}
+.header-container {
+    display: flex;
+}
+.logo {
+    flex: 5;
+    background-color: red;
+    font-size: 2rem;
+    padding: 10px;
+}
+.nav {
+    flex: 9;
+    background-color: rgb(194, 194, 194);
+}
+.nav-ul {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+}
+.nav-li:last-child {
+    position: relative;
+    text-align: right;
+    font-size: 2em;
+    padding: 10px;
+}
+.nav-li {
+    flex: 1;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: yellow;
+}
+.nav-a {
+    background-color: rgb(149, 149, 255);
+}
+
+.sub-nav-ul {
+    position: absolute;
+      top: 52px;
+      right: -172px;
+    background-color: orange;
+}
+.sub-nav-a {
+    display: block;
+    padding: 15px 20px 15px 15px;
+    text-align: right;
+    background-color: pink;
+}
+.menu-in {
+    animation: menu-in 500ms ease forwards;
+}
+.menu-out {
+    animation: menu-out 500ms ease forwards;
+}
+
+@keyframes menu-in {
+    from {right: -172px;}
+    to{right: 0;}
+}
+@keyframes menu-out {
+    from {right: 0;}
+    to{right: -172px;}
+}
+
+@media screen and (max-width: 600px) {
+    .hide-mobile {
+        display: none;
+    }
+    .logo {
+        flex: 9;
+        font-size: 1.75rem;
+    }
+    .nav {
+        flex: 2;
+    }
+}
+@media screen and (min-width: 600px) {
+    .hide-desktop {
+        display: none;
+    }
+}
