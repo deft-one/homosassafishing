@@ -107,7 +107,7 @@ li {
 }
 .placeholder {
     width: 75%;
-    height: 200px;
+    height: 400px;
     margin: 20px auto;
     background-color: purple;
 }
@@ -115,10 +115,11 @@ li {
     display: flex;
 }
 .logo {
+    position: relative;
     flex: 5;
-    background-color: red;
     font-size: 2rem;
-    padding: 10px;
+    padding: 15px 0 15px 10px;
+    background-color: red;
 }
 .nav {
     flex: 9;
@@ -132,8 +133,8 @@ li {
 .nav-li:last-child {
     position: relative;
     text-align: right;
-    font-size: 2em;
-    padding: 10px;
+    font-size: 1.5em;
+    padding: 5px 10px 10px 0;
 }
 .nav-li {
     flex: 1;
@@ -145,18 +146,29 @@ li {
 .nav-a {
     background-color: rgb(149, 149, 255);
 }
-
+.hamburger {
+    line-height: 2;
+    padding: 7px;
+    border: 1px solid black;
+}
 .sub-nav-ul {
     position: absolute;
       top: 52px;
-      right: -172px;
+      right: -200px;
     background-color: orange;
 }
 .sub-nav-a {
     display: block;
-    padding: 15px 20px 15px 15px;
+    padding: 15px 25px 0 25px;
     text-align: right;
-    background-color: pink;
+    background-color: rgba(255, 151, 151, 0);
+}
+.icon {
+    max-width: 64px;
+    max-height: 64px;
+}
+.icon:last-child {
+    padding-bottom: 15px;
 }
 .menu-in {
     animation: menu-in 500ms ease forwards;
@@ -166,27 +178,27 @@ li {
 }
 
 @keyframes menu-in {
-    from {right: -172px;}
-    to{right: 0;}
+    from {background-color: rgba(255, 151, 151, 0); right: -200px;}
+    to{background-color: rgba(255, 151, 151, 0.99); right: 0;}
 }
 @keyframes menu-out {
-    from {right: 0;}
-    to{right: -172px;}
+    from {background-color: rgba(255, 151, 151, 0.99); right: 0;}
+    to{background-color: rgba(255, 151, 151, 0); right: -200px;}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .hide-mobile {
         display: none;
     }
     .logo {
-        flex: 9;
+        flex: auto;
         font-size: 1.75rem;
     }
     .nav {
-        flex: 2;
+        flex: auto;
     }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 650px) {
     .hide-desktop {
         display: none;
     }
