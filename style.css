@@ -180,12 +180,6 @@ li {
 .icon:last-child {
     padding-bottom: 15px;
 }
-.menu-in {
-    animation: menu-in 500ms ease forwards;
-}
-.menu-out {
-    animation: menu-out 500ms ease forwards;
-}
 .article-container {
     width: 90%;
     margin: 0 auto;
@@ -219,10 +213,14 @@ li {
     padding: 10px;
     font-family: 'Josefin Sans', sans-serif;
     background-color: yellow;
+    line-height: 20px;
 }
 .cta-button {
     display: block;
     margin: 10px auto;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 20px;
     background-color: red;
     border: none;
 }
@@ -247,6 +245,31 @@ li {
     font-size: 14px;
     line-height: 20px;
 }
+.to-top {
+    display: block;
+    position: fixed;
+        bottom: 0;
+        right: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 28px;
+    padding: 7px 12px;
+    cursor: pointer;
+    transition: 250ms;
+    background-color: rgba(0, 0, 0, 0.01);
+    color: rgba(0, 0, 0, 0.01);
+}
+.menu-in {
+    animation: menu-in 750ms ease forwards;
+}
+.menu-out {
+    animation: menu-out 750ms ease forwards;
+}
+.toTopFadeIn {
+    animation: toTopFadeIn 750ms ease forwards;
+}
+.toTopFadeOut {
+    animation: toTopFadeOut 750ms ease forwards;
+}
 
 @keyframes menu-in {
     from {background-color: rgba(255, 151, 151, 0); right: -200px;}
@@ -255,6 +278,14 @@ li {
 @keyframes menu-out {
     from {background-color: rgba(255, 151, 151, 0.99); right: 0;}
     to{background-color: rgba(255, 151, 151, 0); right: -200px;}
+}
+@keyframes toTopFadeIn {
+    from { color: rgba(255, 255, 255, 0.01); background-color: rgba(0, 0, 0, 0.01); }
+    to { color: rgba(255, 255, 255, 0.99); background-color: rgba(0, 0, 0, 0.99); }
+}
+@keyframes toTopFadeOut {
+    from { color: rgba(255, 255, 255, 0.99); background-color: rgba(0, 0, 0, 0.99); }
+    to { color: rgba(255, 255, 255, 0.01); background-color: rgba(0, 0, 0, 0.01); }
 }
 
 @media screen and (max-width: 600px) {
