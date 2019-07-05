@@ -95,6 +95,9 @@ input, select {
 a {
     text-decoration: none;
 }
+a:visited {
+    color: rgb(0, 43, 83);
+}
 li {
     list-style-type: none;
 }
@@ -102,32 +105,35 @@ li {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
-    background-color: gray;
+    background-color: rgb(0, 132, 255);
     overflow-x: hidden;
     padding-bottom: 15px;
 }
 .placeholder {
     width: 90%;
+    max-width: 640px;
     height: 0;
     padding-top: 50%;
     margin: 20px auto;
-    background-color: purple;
+    background-color: rgb(124, 192, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .header-container {
     display: flex;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 .logo-top {
     position: relative;
-    flex: 8;
+    flex: 12;
     font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Kodchasan', sans-serif;
     font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.99);
     padding: 15px 0 15px 10px;
-    background-color: red;
 }
 .nav {
-    flex: 9;
-    background-color: rgb(194, 194, 194);
+    flex: 16;
 }
 .nav-ul {
     display: flex;
@@ -145,45 +151,62 @@ li {
     font-size: 1rem;
     padding-bottom: 10px;
     padding-top: 10px;
-    background-color: yellow;
 }
 .nav-a {
-    background-color: rgb(149, 149, 255);
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(0, 43, 83);
+}
+.nav-a:hover:not(.hamburger) {
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.7);
+    font-size: 16px;
 }
 .hamburger {
     padding: 7px;
-    font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    border: 1px solid black;
+    font-size: 14px;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.99);
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .hamburger:hover {
     cursor: pointer;
+    background-color: rgb(111, 185, 255);
 }
 .sub-nav-ul {
     position: absolute;
       top: 41px;
       right: -200px;
-    background-color: orange;
+      box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 .sub-nav-a {
     display: block;
-    padding: 15px 25px 0 25px;
+    padding: 8px 25px 8px 25px;
     font-size: 20px;
+    font-family: 'Kodchasan', sans-serif;
+    color: rgb(0, 43, 83);
     text-align: right;
-    background-color: rgba(255, 151, 151, 0);
+    background-color: rgb(52, 157, 255);
 }
-.icon {
-    max-width: 32px;
-    max-height: 32px;
+.sub-nav-a:hover {
+    background-color: rgb(111, 185, 255);
 }
-.icon:last-child {
+.sub-nav-a:first-child {
+    padding-top: 15px;
+}
+.sub-nav-a:last-child {
     padding-bottom: 15px;
+}
+.rotator-container, .content-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(95, 178, 255);
 }
 .article-container {
     width: 90%;
     margin: 0 auto;
-    background-color: red;
 }
 .article-h1 {
     font-family: 'Montserrat', sans-serif;
@@ -191,72 +214,98 @@ li {
     font-size: 34px;
     text-align: center;
     padding: 10px 10px 10px 10px;
-    background-color: rgb(255, 0, 200);
+    background-color: rgb(0, 51, 99);
+    color: white;
 }
 .article-h2 {
+    margin-top: 30px;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 24px;
     text-align: center;
-    padding: 50px 10px 10px 10px;
-    background-color: blue;
+    padding: 10px;
+    background-color: rgb(188, 222, 255);
 }
 .article-date {
     display: block;
     text-align: right;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    font-style: italic;
     padding: 10px;
-    background-color: green;
+    background-color: rgb(157, 207, 255);
 }
 .article-p {
-    padding: 10px;
-    font-family: 'Josefin Sans', sans-serif;
-    background-color: yellow;
-    line-height: 20px;
+    padding: 20px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    background-color: rgb(188, 222, 255);
+}
+.article-p-bold {
+    font-weight: bold;
+}
+.fish {
+    font-weight: bold;
+    border-bottom: 2px dashed rgb(133, 133, 133);
+}
+.fish:hover {
+    cursor: pointer;
+    color: red;
+    border-bottom: 2px dashed red;
 }
 .cta-button {
     display: block;
-    margin: 10px auto;
+    margin: 15px auto;
     padding: 15px;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    background-color: red;
-    border: none;
+    background-color: rgb(17, 199, 0);
+    border: transparent;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+}
+.cta-button:hover {
+    cursor: pointer;
+    background-color: rgb(21, 255, 0);
 }
 .footer-container {
-    width: 90%;
+    padding-top: 20px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    font-family: 'Josefin Sans', sans-serif;
-    background-color: blue;
+    font-family: 'Kodchasan', sans-serif;
 }
 .logo-bottom {
-    margin: 15px;
+    margin: 0;
     flex: auto;
     font-size: 26px;
     text-align: center;
 }
 .copyright {
     flex: auto;
-    margin: 10px;
+    margin: 0;
     text-align: center;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 26px;
 }
 .to-top {
     display: block;
     position: fixed;
-        bottom: 0;
-        right: 0;
-    font-family: 'Josefin Sans', sans-serif;
+        bottom: 5px;
+        right: 5px;
+    font-family: 'Kodchasan', sans-serif;
     font-size: 28px;
+    font-weight: bold;
     padding: 7px 12px;
     cursor: pointer;
     transition: 250ms;
     background-color: rgba(0, 0, 0, 0.01);
     color: rgba(0, 0, 0, 0.01);
+    z-index: 999;
 }
 .menu-in {
     animation: menu-in 750ms ease forwards;
@@ -293,11 +342,11 @@ li {
         display: none;
     }
     .logo-top {
-        flex: auto;
+        flex: 3;
         font-size: 22px;
     }
     .nav {
-        flex: auto;
+        flex: 1;
     }
 }
 @media screen and (min-width: 600px) {
@@ -307,9 +356,17 @@ li {
 }
 @media screen and (min-width: 750px) {
     .logo-top {
-        flex: 1;
+        flex: 17;
+    }
+    .logo-bottom {
+        text-align: left;
+        padding-left: 20px;
+    }
+    .copyright {
+        text-align: right;
+        padding-right: 50px;
     }
     .nav {
-        flex: 2;
+        flex: 36;
     }
 }
