@@ -109,15 +109,6 @@ li {
     overflow-x: hidden;
     padding-bottom: 15px;
 }
-.placeholder {
-    width: 90%;
-    max-width: 640px;
-    height: 0;
-    padding-top: 50%;
-    margin: 20px auto;
-    background-color: rgb(124, 192, 255);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
 .header-container {
     display: flex;
     box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
@@ -204,6 +195,58 @@ li {
     margin: 0 auto;
     background-color: rgb(95, 178, 255);
 }
+.image-container {
+    position: relative;
+    width: 90%;
+    max-width: 640px;
+    height: 67.5vw;
+    max-height: 480px;
+    margin: 20px auto;
+    background-color: rgb(124, 192, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+.left-arrow, .right-arrow {
+    position: absolute;
+      top: 50%;
+    transform: translate(0, -50%);
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: calibri, sans-serif;
+    font-size: 6vw;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 1vh 1.5vw;
+}
+.left-arrow {
+    left: 0;
+    border-radius: 0 7px 7px 0;
+}
+.right-arrow {
+    right: 0;
+    border-radius: 7px 0 0 7px;
+    
+}
+.dots-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+      bottom: 0;
+      left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    text-align: center;
+    font-size: 45px;
+    color: rgba(255, 255, 255, 0.4);
+}
+.dots-container > .active {
+    color: rgba(255, 255, 255, 0.8);
+}
+.images {
+    width: 100%;
+    height: 100%;
+}
 .article-container {
     width: 90%;
     margin: 0 auto;
@@ -211,7 +254,7 @@ li {
 .article-h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 34px;
+    font-size: 32px;
     text-align: center;
     padding: 10px 10px 10px 10px;
     background-color: rgb(0, 51, 99);
@@ -236,6 +279,7 @@ li {
     background-color: rgb(157, 207, 255);
 }
 .article-p {
+    margin-bottom: 20px;
     padding: 20px 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
@@ -245,15 +289,6 @@ li {
 }
 .article-p-bold {
     font-weight: bold;
-}
-.fish {
-    font-weight: bold;
-    border-bottom: 2px dashed rgb(133, 133, 133);
-}
-.fish:hover {
-    cursor: pointer;
-    color: red;
-    border-bottom: 2px dashed red;
 }
 .cta-button {
     display: block;
@@ -308,10 +343,10 @@ li {
     z-index: 999;
 }
 .menu-in {
-    animation: menu-in 750ms ease forwards;
+    animation: menu-in 500ms ease forwards;
 }
 .menu-out {
-    animation: menu-out 750ms ease forwards;
+    animation: menu-out 500ms ease forwards;
 }
 .toTopFadeIn {
     animation: toTopFadeIn 750ms ease forwards;
