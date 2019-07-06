@@ -105,9 +105,16 @@ li {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
-    background-image: linear-gradient(rgb(2, 103, 121), rgb(0, 45, 53));
+    background-image: linear-gradient(rgb(2, 121, 91) 0%, rgb(2, 103, 121) 15%, rgb(0, 45, 53));
     overflow-x: hidden;
     padding-bottom: 15px;
+}
+.shark {
+    position: fixed;
+      top: 50%;
+      left: -520px;
+    opacity: 0.6;
+    animation: sharkMove 1500ms linear forwards 3000ms;
 }
 .header-container {
     display: flex;
@@ -183,11 +190,12 @@ li {
     font-family: 'Kodchasan', sans-serif;
     color: rgb(0, 43, 83);
     text-align: right;
-    background-color: rgb(52, 157, 255);
+    background-color: rgb(89, 158, 152);
     z-index: 999;
 }
-.sub-nav-a:hover {
-    background-color: rgb(111, 185, 255);
+.sub-nav > .active {
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.7);
 }
 .sub-nav-a:first-child {
     padding-top: 15px;
@@ -199,6 +207,7 @@ li {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    z-index: 997;
 }
 .image-container {
     position: relative;
@@ -209,6 +218,7 @@ li {
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.99);
     overflow: hidden;
+    z-index: 2;
 }
 .dots-container {
     margin: 0;
@@ -277,9 +287,6 @@ li {
     line-height: 22px;
     letter-spacing: 2px;
     background-color: rgb(140, 238, 255);
-}
-.article-p-bold {
-    font-weight: bold;
 }
 .cta-button {
     display: block;
@@ -355,6 +362,11 @@ li {
 }
 .toTopFadeOut {
     animation: toTopFadeOut 750ms ease forwards;
+}
+
+@keyframes sharkMove {
+    from { left: -520px; }
+    to { left: 100%; }
 }
 
 @keyframes menu-in {
