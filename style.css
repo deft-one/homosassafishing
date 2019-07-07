@@ -105,7 +105,7 @@ li {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
-    background-image: linear-gradient(rgb(2, 121, 91) 0%, rgb(2, 103, 121) 15%, rgb(0, 45, 53));
+    background-image: linear-gradient(rgb(2, 121, 91) 0%, rgb(0, 88, 104) 15%, rgb(0, 16, 19));
     overflow-x: hidden;
     padding-bottom: 15px;
 }
@@ -218,6 +218,7 @@ li {
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.99);
     overflow: hidden;
+    border-radius: 10px;
     z-index: 2;
 }
 .dots-container {
@@ -247,27 +248,77 @@ li {
     width: 100%;
     height: 100%;
 }
+.cta-container  {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 997;
+}
+.cta-rates, .cta-book {
+    flex: auto;
+    max-width: 300px;
+    display: block;
+    margin: 20px 5%;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px white;
+}
+.cta-rates {
+    background-color: rgb(0, 139, 69);
+}
+.cta-rates:hover {
+    background-color: rgb(0, 184, 92);
+}
+.cta-book {
+    background-color: rgb(0, 255, 76);
+}
+.cta-book:hover {
+    background-color: rgb(0, 182, 55);
+}
+.cta-rates-a {
+    color: rgba(255, 255, 255, 0.9);
+}
+.cta-rates-a:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.cta-book-a {
+    color: rgba(0, 53, 16, 0.9);
+}
+.cta-book-a:hover {
+    color: rgb(0, 53, 16);
+    cursor: pointer;
+}
+.cta-rates-a:visited, .cta-book-a:visited {
+    color: white;
+}
 .article-container {
     width: 90%;
     margin: 20px auto;
 }
-.article-h1 {
+.article-h1, .rates-h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 26px;
     text-align: center;
-    padding: 10px 10px 10px 10px;
+    padding: 20px 10px;
     background-color: rgb(0, 45, 53);
     color: white;
 }
-.article-h2 {
-    margin-top: 30px;
+.article-h2, .rates-p {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 24px;
     text-align: center;
     padding: 10px;
-    color: rgb(184, 244, 255);
+    color: rgb(212, 249, 255);
     background-color: rgb(0, 145, 170);
 }
 .article-date {
@@ -278,32 +329,16 @@ li {
     font-style: italic;
     padding: 10px;
     background-color: rgb(0, 171, 201);
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.281);
 }
 .article-p {
     margin-bottom: 20px;
-    padding: 20px 10px;
+    padding: 40px 15px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 18px;
+    line-height: 20px;
     letter-spacing: 2px;
     background-color: rgb(140, 238, 255);
-}
-.cta-button {
-    display: block;
-    margin: 15px auto;
-    padding: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: rgb(106, 199, 0);
-    border: transparent;
-    border-radius: 10px;
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
-}
-.cta-button:hover {
-    cursor: pointer;
-    background-color: rgb(21, 255, 0);
 }
 .footer-container {
     padding-top: 20px;
@@ -430,4 +465,81 @@ li {
     .nav {
         flex: 36;
     }
+}
+
+/* ************************* FISHING ***************************** */
+
+.title-container {
+    width: 90%;
+    margin: 20px auto;
+}
+.title-container-h1 {
+    padding: 20px 0 20px 0;
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.99);
+}
+.rates-container {
+    width: 90%;
+    margin: 20px auto;
+    font-family: 'Montserrat', sans-serif;
+}
+.rates-flex {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.rates-half, .rates-full {
+    flex: auto;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+.rates-half {
+    background-color: rgb(126, 224, 241);
+}
+.rates-full {
+    background-color: rgb(82, 207, 230);
+}
+.rates-half-bold, .rates-full-bold {
+    display: block;
+    padding: 30px 0;
+    font-weight: bold;
+}
+.price {
+    color: rgb(30, 255, 0);
+    text-shadow: 0 0 5px rgb(6, 53, 0);
+}
+.book-question-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 2px;
+    background-color: rgb(126, 224, 241);
+}
+.input {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px;
+}
+.radio-container {
+    text-align: left;
+}
+.radio {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border: none;
+}
+.fishing-label, .scalloping-label, .full-label, .half-label {
+    font-weight: bold;
+    margin: 10px;
+}
+.radio-container:nth-of-type(2) {
+    border-bottom: 2px solid rgb(36, 179, 204);
 }
