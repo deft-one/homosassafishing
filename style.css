@@ -446,6 +446,9 @@ li {
     .hide-desktop {
         display: none;
     }
+    .nav-a {
+        font-size: 15px;
+    }
 }
 @media screen and (min-width: 750px) {
     .logo-top {
@@ -464,6 +467,9 @@ li {
     }
     .nav {
         flex: 36;
+    }
+    .nav-a {
+        font-size: 18px;
     }
 }
 
@@ -520,26 +526,48 @@ li {
     letter-spacing: 2px;
     background-color: rgb(126, 224, 241);
 }
-.input {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    padding: 5px;
-    margin: 10px;
-}
-.radio-container {
-    text-align: left;
-}
-.radio {
-    width: 20px;
-    height: 20px;
-    margin: 10px;
-    border: none;
-}
 .fishing-label, .scalloping-label, .full-label, .half-label {
     font-weight: bold;
     margin: 10px;
 }
-.radio-container:nth-of-type(2) {
-    border-bottom: 2px solid rgb(36, 179, 204);
+
+/* ************************* CONTACT ***************************** */
+
+#timeframeSelect, #typeSelect, #dateSelect {
+    display: none;
+}
+.input, textarea {
+    display: block;
+}
+.input, textarea, .form-section, .send-button {
+    margin: 20px auto;
+}
+.book-question-form button {
+    font-size: 20px;
+    padding: 10px;
+}
+.book-question-form input {
+    font-size: 20px;
+    padding: 10px;
+}
+.book-question-form select {
+    font-size: 20px;
+    padding: 10px;
+}
+.book-question-form textarea {
+    font-size: 20px;
+    padding: 10px;
+}
+.send-button {
+    margin-bottom: 20px;
+}
+.button-prompt {
+    margin: 20px 0 10px 0;
+}
+.question-button, .book-button, .full-button, .half-button, .fishing-button, .scalloping-button {
+    background-color: rgb(0, 75, 12);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
 }

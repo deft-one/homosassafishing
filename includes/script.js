@@ -111,3 +111,73 @@ function currentImage(n) {
     }, 4000);
     showImages(imageIndex = n);
 }
+
+// *************************** CONTACT PAGE ****************************
+
+let bookQuestionForm = document.getElementById('bookQuestionForm');
+
+bookQuestionForm.addEventListener('click', function (event) {
+    let questionButton = document.getElementById('questionButton');
+    let bookButton = document.getElementById('bookButton');
+    let timeframeSelect = document.getElementById('timeframeSelect');
+    let typeSelect = document.getElementById('typeSelect');
+    let dateSelect = document.getElementById('dateSelect');
+    let fullButton = document.getElementById('fullButton');
+    let halfButton = document.getElementById('halfButton');
+    let fishingButton = document.getElementById('fishingButton');
+    let scallopingButton = document.getElementById('scallopingButton');
+    let monthSelect = document.getElementById('monthSelect');
+    let daySelect = document.getElementById('daySelect');
+    
+    function dynamicYear() {
+        let yearSelect = document.getElementById('yearSelect');
+        today = new Date();
+        let year = today.getYear() + 1900;
+        let nextYear = today.getYear() + 1901;
+        yearSelect.innerHTML = '<option name=' + '"' + year + '">' + year + '</option><option name=' + '"' + nextYear + '">' + nextYear + '</option>';
+    }
+
+    dynamicYear();
+
+    if (event.target === questionButton) {
+        event.preventDefault();
+        timeframeSelect.style.display = 'none';
+        typeSelect.style.display = 'none';
+        dateSelect.style.display = 'none';
+        bookButton.style.backgroundColor = 'rgb(0, 75, 12)';
+        questionButton.style.backgroundColor = 'rgb(0, 255, 42)';
+    } else if (event.target === bookButton) {
+        event.preventDefault();
+        timeframeSelect.style.display = 'block';
+        typeSelect.style.display = 'block';
+        dateSelect.style.display = 'block';
+        questionButton.style.backgroundColor = 'rgb(0, 75, 12)';
+        bookButton.style.backgroundColor = 'rgb(0, 255, 42)';
+    } else if (event.target === fullButton) {
+        event.preventDefault();
+        if (scallopingButton.style.backgroundColor === 'rgb(0, 255, 42)') {
+            fullButton.style.backgroundColor = 'rgb(0, 75, 12)';
+            halfButton.style.backgroundColor = 'rgb(0, 255, 42)';
+        } else {
+            halfButton.style.backgroundColor = 'rgb(0, 75, 12)';
+            fullButton.style.backgroundColor = 'rgb(0, 255, 42)';
+        }
+    } else if (event.target === halfButton) {
+        event.preventDefault();
+        fullButton.style.backgroundColor = 'rgb(0, 75, 12)';
+        halfButton.style.backgroundColor = 'rgb(0, 255, 42)';
+    } else if (event.target === fishingButton) {
+        event.preventDefault();
+        monthSelect.innerHTML = '<option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Mar">Mar</option><option value="Apr">Apr</option><option value="May">May</option><option value="Jun">Jun</option><option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option><option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option>';
+        scallopingButton.style.backgroundColor = 'rgb(0, 75, 12)';
+        fishingButton.style.backgroundColor = 'rgb(0, 255, 42)';
+    } else if (event.target === scallopingButton) {
+        event.preventDefault();
+        monthSelect.innerHTML = '<option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option>';
+        fishingButton.style.backgroundColor = 'rgb(0, 75, 12)';
+        scallopingButton.style.backgroundColor = 'rgb(0, 255, 42)';
+        fullButton.style.backgroundColor = 'rgb(0, 75, 12)';
+        halfButton.style.backgroundColor = 'rgb(0, 255, 42)';
+        }
+
+});
