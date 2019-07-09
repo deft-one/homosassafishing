@@ -57,7 +57,33 @@
           <div class="title-container">
                 <h1 class="title-container-h1">Contact</h1>
           </div>
-
+          <div class="rates-container">
+              <h2 class="rates-h2">Fishing Rates & Times</h2>
+              <p class="rates-p">Let’s go flats fishing for trout, redfish & assorted game fish!</p>
+              <div class="rates-flex">
+                <div class="rates-half">
+                    <span class="rates-half-bold">Half Day</span>
+                    <span>(4 Hrs.) 1 - 2 people</span>
+                    <span class="rates-half-bold price">$350.00</span>
+                </div>
+                <div class="rates-full">
+                    <span class="rates-full-bold">Full Day</span>
+                    <span>(8 Hrs.) 1 - 2 people</span>
+                    <span class="rates-full-bold price">$450.00</span>
+                </div>
+              </div>
+          </div>
+          <div class="rates-container">
+              <h2 class="rates-h2">Scalloping Rates & Times</h2>
+              <p id="rates-p" class="rates-p">Scalloping is a term used to describe the harvest of bay scallops from our local bay waters. Scalloping is very popular in Homosassa. People want to be on the water in the summer months and scalloping is the perfect recreation for this time of year! Scalloping season runs from July 1st until September 24th.</p>
+              <div class="rates-flex">
+                <div class="rates-half">
+                    <span class="rates-half-bold">Half Day</span>
+                    <span>(4 Hrs.) 1 - 2 people</span>
+                    <span class="rates-half-bold price">$350.00</span>
+                </div>
+              </div>
+          </div>
           <div class="rates-container">
             <h2 class="rates-h2">Booking & Questions</h2>
             <div class="book-question-container">
@@ -67,9 +93,11 @@
                     <button id="questionButton" class="question-button">Ask a Question</button>
                     <button id="bookButton" class="book-button">Book a Charter!</button>
                   </div>
+                  <div class="form-section" id="inputSection">
                     <input class="input" name="firstName" type="text" placeholder="first name">
                     <input class="input" name="lastName" type="text" placeholder="last name">
                     <input class="input" name="email" type="email" placeholder="email">
+                  </div>
                   <div id="timeframeSelect" class="form-section">
                     <div class="button-prompt">Please select a timeframe.</div>
                     <button id="fullButton" class="full-button">Full Day - 8hrs</button>
@@ -82,12 +110,14 @@
                   </div>
                   <div id="dateSelect" class="form-section">
                     <select name="year" id="yearSelect">
+                      <option value=""></option>
+                      <option value=""></option>
                     </select>
                     <select name="month" id="monthSelect">
                     </select>
                     <select name="day" id="daySelect">
                       <option value="1">1</option>
-                      <option value="2">2</option>
+                      <option value=2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
                       <option value="5">5</option>
@@ -119,7 +149,7 @@
                       <option id="31" value="31">31</option>
                     </select>
                   </div>
-                    <textarea name="message" id="" cols="" rows="" placeholder="message..."></textarea>
+                    <textarea name="message" id="messageBox" cols="" rows="" placeholder="message..."></textarea>
                   <div>
                       <button class="send-button">Send</button>
                   </div>

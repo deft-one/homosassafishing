@@ -446,7 +446,7 @@ li {
 }
 .rates-half-bold, .rates-full-bold {
     display: block;
-    padding: 30px 0;
+    padding: 15px 0;
     font-weight: bold;
 }
 .price {
@@ -468,7 +468,11 @@ li {
 
 /* ************************* CONTACT ***************************** */
 
-#timeframeSelect, #typeSelect, #dateSelect {
+#rates-p {
+    font-size: 16px;
+    font-weight: normal;
+}
+#timeframeSelect, #typeSelect, #dateSelect, #inputSection, #messageBox {
     display: none;
 }
 .input, textarea {

@@ -128,19 +128,26 @@ bookQuestionForm.addEventListener('click', function (event) {
     let scallopingButton = document.getElementById('scallopingButton');
     let monthSelect = document.getElementById('monthSelect');
     let daySelect = document.getElementById('daySelect');
+    let inputSection = document.getElementById('inputSection');
+    let messageBox = document.getElementById('messageBox');
     
     function dynamicYear() {
         let yearSelect = document.getElementById('yearSelect');
         today = new Date();
         let year = today.getYear() + 1900;
         let nextYear = today.getYear() + 1901;
-        yearSelect.innerHTML = '<option name=' + '"' + year + '">' + year + '</option><option name=' + '"' + nextYear + '">' + nextYear + '</option>';
+        yearSelect.options[0].value = year;
+        yearSelect.options[0].innerText = year;
+        yearSelect.options[1].value = nextYear;
+        yearSelect.options[1].innerText = nextYear;
     }
 
     dynamicYear();
 
     if (event.target === questionButton) {
         event.preventDefault();
+        inputSection.style.display = 'block';
+        messageBox.style.display = 'block';
         timeframeSelect.style.display = 'none';
         typeSelect.style.display = 'none';
         dateSelect.style.display = 'none';
@@ -148,6 +155,8 @@ bookQuestionForm.addEventListener('click', function (event) {
         questionButton.style.backgroundColor = 'rgb(0, 255, 42)';
     } else if (event.target === bookButton) {
         event.preventDefault();
+        inputSection.style.display = 'block';
+        messageBox.style.display = 'block';
         timeframeSelect.style.display = 'block';
         typeSelect.style.display = 'block';
         dateSelect.style.display = 'block';
@@ -168,16 +177,49 @@ bookQuestionForm.addEventListener('click', function (event) {
         halfButton.style.backgroundColor = 'rgb(0, 255, 42)';
     } else if (event.target === fishingButton) {
         event.preventDefault();
-        monthSelect.innerHTML = '<option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Mar">Mar</option><option value="Apr">Apr</option><option value="May">May</option><option value="Jun">Jun</option><option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option><option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option>';
+        monthSelect.innerHTML = [
+            '<option value="Jan">Jan</option>',
+            '<option value="Feb">Feb</option>',
+            '<option value="Mar">Mar</option>',
+            '<option value="Apr">Apr</option>',
+            '<option value="May">May</option>',
+            '<option value="Jun">Jun</option>',
+            '<option value="Jul">Jul</option>',
+            '<option value="Aug">Aug</option>',
+            '<option value="Sep">Sep</option>',
+            '<option value="Oct">Oct</option>',
+            '<option value="Nov">Nov</option>',
+            '<option value="Dec">Dec</option>'
+        ];
         scallopingButton.style.backgroundColor = 'rgb(0, 75, 12)';
         fishingButton.style.backgroundColor = 'rgb(0, 255, 42)';
     } else if (event.target === scallopingButton) {
         event.preventDefault();
-        monthSelect.innerHTML = '<option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option>';
+        monthSelect.innerHTML = [
+            '<option value="Jul">Jul</option>',
+            '<option value="Aug">Aug</option>',
+            '<option value="Sep">Sep</option>'
+        ];
         fishingButton.style.backgroundColor = 'rgb(0, 75, 12)';
         scallopingButton.style.backgroundColor = 'rgb(0, 255, 42)';
         fullButton.style.backgroundColor = 'rgb(0, 75, 12)';
         halfButton.style.backgroundColor = 'rgb(0, 255, 42)';
-        }
+    } else if (event.target.value === 'Apr' || event.target.value === 'Jun' || event.target.value === 'Sep' || event.target.value === 'Nov') {
+        daySelect.options[30] = null;
+    } else if (event.target.value === 'Feb') {
+        daySelect.options[30] = null;
+        daySelect.options[29] = null;
+        daySelect.options[28] = null;
+    } else {
+        daySelect.options[28] = new Option('29', '29');
+        daySelect.options[29] = new Option('30', '30');
+        daySelect.options[30] = new Option('31', '31');
+    }
 
 });
+
+// monthSelect.addEventListener('change', function() {
+//     if (monthSelect.value) {
+
+//     }
+// });
