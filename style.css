@@ -91,7 +91,10 @@ input, select {
 }
 
 /* END CSS RESET * * * * * * * * * * * * * * * * END CSS RESET */
-
+html, body {
+    width: 100%;
+    height: 100%;
+}
 a {
     text-decoration: none;
 }
@@ -104,7 +107,8 @@ li {
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 50px auto auto;
+    align-items: flex-end;
     background-image: linear-gradient(rgb(2, 121, 91) 0%, rgb(0, 88, 104) 15%, rgb(0, 16, 19));
     overflow-x: hidden;
     padding-bottom: 15px;
@@ -185,8 +189,8 @@ li {
 }
 .sub-nav-a {
     display: block;
-    padding: 8px 25px 8px 25px;
-    font-size: 20px;
+    padding: 6px 25px 6px 25px;
+    font-size: 18px;
     font-family: 'Kodchasan', sans-serif;
     color: rgb(0, 43, 83);
     text-align: right;
@@ -208,6 +212,9 @@ li {
     max-width: 1000px;
     margin: 0 auto;
     z-index: 997;
+}
+.content-container {
+    height: 100%;
 }
 .image-container {
     position: relative;
@@ -309,7 +316,10 @@ li {
     font-size: 26px;
     text-align: center;
     padding: 20px 10px;
-    background-color: rgb(0, 45, 53);
+    background-color: rgb(0, 61, 71);
+    border-top: 2px solid rgb(0, 145, 170);
+    border-left: 2px solid rgb(0, 145, 170);
+    border-right: 2px solid rgb(0, 145, 170);
     color: white;
 }
 .article-h2, .rates-p {
@@ -468,50 +478,85 @@ li {
 
 /* ************************* CONTACT ***************************** */
 
-#rates-p {
-    font-size: 16px;
-    font-weight: normal;
+.contact-container {
+    background-color: rgb(0, 145, 170);
+    padding-bottom: 30px;
 }
-#timeframeSelect, #typeSelect, #dateSelect, #inputSection, #messageBox {
-    display: none;
-}
-.input, textarea {
-    display: block;
-    width: 90%;
-    max-width: 300px;
-}
-.input, textarea, .form-section, .send-button {
-    margin: 20px auto;
-}
-.book-question-form button {
-    font-size: 20px;
-    padding: 10px;
-}
-.book-question-form input {
-    font-size: 20px;
-    padding: 10px;
-}
-.book-question-form select {
-    font-size: 20px;
-    padding: 10px;
-}
-.book-question-form textarea {
-    font-size: 20px;
-    padding: 10px;
-}
-.send-button {
-    margin-bottom: 20px;
-}
-.button-prompt {
-    margin: 20px 0 10px 0;
-}
-.question-button, .book-button, .full-button, .half-button, .fishing-button, .scalloping-button {
-    background-color: rgb(0, 75, 12);
+.contact-form * {
     border: none;
-    border-radius: 10px;
     outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.form-section-top {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form-section {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.button, .send-button {
+    margin: 10px;
+    padding: 10px;
+    width: 175px;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    background-color: rgb(184, 184, 184);
+}
+.button:hover, .send-button:hover {
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
+.button-prompt {
+    margin: 0;
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+.input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 87%;
+    max-width: 350px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    background-color: rgb(184, 184, 184);
+}
+.input:focus {
+    box-shadow: 0 0 7px rgb(187, 255, 0);
+    background-color: rgb(255, 255, 255);
+}
+.select {
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    background-color: rgb(184, 184, 184);
+}
+.select:focus {
+    box-shadow: 0 0 7px rgb(187, 255, 0);
+    background-color: rgb(255, 255, 255);
+}
+.send-button {
+    margin: 20px auto;
+}
+#timeframeSelect, #typeSelect, #inputSection, #dateSelect, #submitSection {
+    display: none;
+}
+
+
 
 /* **************** MEDIA QUERIES & KEYFRAMES ************************* */
 

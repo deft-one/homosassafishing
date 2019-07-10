@@ -114,112 +114,204 @@ function currentImage(n) {
 
 // *************************** CONTACT PAGE ****************************
 
-let bookQuestionForm = document.getElementById('bookQuestionForm');
-
-bookQuestionForm.addEventListener('click', function (event) {
-    let questionButton = document.getElementById('questionButton');
-    let bookButton = document.getElementById('bookButton');
+document.addEventListener('click', function(event) {
+    let questionBtn = document.getElementById('questionBtn');
+    let bookBtn = document.getElementById('bookBtn');
+    let fullBtn = document.getElementById('fullBtn');
+    let halfBtn = document.getElementById('halfBtn');
+    let fishingBtn = document.getElementById('fishingBtn');
+    let scallopingBtn = document.getElementById('scallopingBtn');
     let timeframeSelect = document.getElementById('timeframeSelect');
     let typeSelect = document.getElementById('typeSelect');
     let dateSelect = document.getElementById('dateSelect');
-    let fullButton = document.getElementById('fullButton');
-    let halfButton = document.getElementById('halfButton');
-    let fishingButton = document.getElementById('fishingButton');
-    let scallopingButton = document.getElementById('scallopingButton');
+    let inputSection = document.getElementById('inputSection');
+    let submit = document.getElementById('submit');
+    let yearSelect = document.getElementById('yearSelect');
     let monthSelect = document.getElementById('monthSelect');
     let daySelect = document.getElementById('daySelect');
-    let inputSection = document.getElementById('inputSection');
-    let messageBox = document.getElementById('messageBox');
-    
+
+    event.preventDefault();
+
     function dynamicYear() {
-        let yearSelect = document.getElementById('yearSelect');
-        today = new Date();
-        let year = today.getYear() + 1900;
-        let nextYear = today.getYear() + 1901;
-        yearSelect.options[0].value = year;
-        yearSelect.options[0].innerText = year;
-        yearSelect.options[1].value = nextYear;
-        yearSelect.options[1].innerText = nextYear;
+        let year = new Date();
+        thisYear = year.getFullYear();
+        nextYear = year.getFullYear() + 1;
     }
 
     dynamicYear();
 
-    if (event.target === questionButton) {
-        event.preventDefault();
-        inputSection.style.display = 'block';
-        messageBox.style.display = 'block';
-        timeframeSelect.style.display = 'none';
-        typeSelect.style.display = 'none';
-        dateSelect.style.display = 'none';
-        bookButton.style.backgroundColor = 'rgb(0, 75, 12)';
-        questionButton.style.backgroundColor = 'rgb(0, 255, 42)';
-    } else if (event.target === bookButton) {
-        event.preventDefault();
-        inputSection.style.display = 'block';
-        messageBox.style.display = 'block';
-        timeframeSelect.style.display = 'block';
-        typeSelect.style.display = 'block';
-        dateSelect.style.display = 'block';
-        questionButton.style.backgroundColor = 'rgb(0, 75, 12)';
-        bookButton.style.backgroundColor = 'rgb(0, 255, 42)';
-    } else if (event.target === fullButton) {
-        event.preventDefault();
-        if (scallopingButton.style.backgroundColor === 'rgb(0, 255, 42)') {
-            fullButton.style.backgroundColor = 'rgb(0, 75, 12)';
-            halfButton.style.backgroundColor = 'rgb(0, 255, 42)';
-        } else {
-            halfButton.style.backgroundColor = 'rgb(0, 75, 12)';
-            fullButton.style.backgroundColor = 'rgb(0, 255, 42)';
+    function lastStep() {
+        if (yearSelect.value !== '' && monthSelect.value !== '' && daySelect.value !== '') {
+            inputSection.style.display = 'flex';
+        }if (yearSelect.value === '' || monthSelect.value === '' || daySelect.value === '') {
+            inputSection.style.display = 'none';
         }
-    } else if (event.target === halfButton) {
-        event.preventDefault();
-        fullButton.style.backgroundColor = 'rgb(0, 75, 12)';
-        halfButton.style.backgroundColor = 'rgb(0, 255, 42)';
-    } else if (event.target === fishingButton) {
-        event.preventDefault();
-        monthSelect.innerHTML = [
-            '<option value="Jan">Jan</option>',
-            '<option value="Feb">Feb</option>',
-            '<option value="Mar">Mar</option>',
-            '<option value="Apr">Apr</option>',
-            '<option value="May">May</option>',
-            '<option value="Jun">Jun</option>',
-            '<option value="Jul">Jul</option>',
-            '<option value="Aug">Aug</option>',
-            '<option value="Sep">Sep</option>',
-            '<option value="Oct">Oct</option>',
-            '<option value="Nov">Nov</option>',
-            '<option value="Dec">Dec</option>'
-        ];
-        scallopingButton.style.backgroundColor = 'rgb(0, 75, 12)';
-        fishingButton.style.backgroundColor = 'rgb(0, 255, 42)';
-    } else if (event.target === scallopingButton) {
-        event.preventDefault();
-        monthSelect.innerHTML = [
-            '<option value="Jul">Jul</option>',
-            '<option value="Aug">Aug</option>',
-            '<option value="Sep">Sep</option>'
-        ];
-        fishingButton.style.backgroundColor = 'rgb(0, 75, 12)';
-        scallopingButton.style.backgroundColor = 'rgb(0, 255, 42)';
-        fullButton.style.backgroundColor = 'rgb(0, 75, 12)';
-        halfButton.style.backgroundColor = 'rgb(0, 255, 42)';
-    } else if (event.target.value === 'Apr' || event.target.value === 'Jun' || event.target.value === 'Sep' || event.target.value === 'Nov') {
-        daySelect.options[30] = null;
-    } else if (event.target.value === 'Feb') {
-        daySelect.options[30] = null;
-        daySelect.options[29] = null;
-        daySelect.options[28] = null;
-    } else {
-        daySelect.options[28] = new Option('29', '29');
-        daySelect.options[29] = new Option('30', '30');
-        daySelect.options[30] = new Option('31', '31');
     }
+    
+    lastStep();
 
+    if (event.target === questionBtn) {
+        questionBtn.style.backgroundColor = 'rgb(102, 255, 0)';
+        bookBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        typeSelect.style.display = 'none';
+        timeframeSelect.style.display = 'none';
+        dateSelect.style.display = 'none';
+        inputSection.style.display = 'flex';
+        submit.innerText = 'Send';
+    } else if (event.target === bookBtn) {
+        bookBtn.style.backgroundColor = 'rgb(102, 255, 0)';
+        questionBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        typeSelect.style.display = 'flex';
+        timeframeSelect.style.display = 'none';
+        dateSelect.style.display = 'none';
+        inputSection.style.display = 'none';
+        submit.innerText = 'Book It!';
+        yearSelect.innerHTML = ['<option value=""></option>',
+                                '<option value="' + thisYear + '">' + thisYear + '</option>',
+                                '<option value="' + nextYear + '">' + nextYear + '</option>'];
+    } else if (event.target === fishingBtn) {
+        fishingBtn.style.backgroundColor = 'rgb(102, 255, 0)';
+        scallopingBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        timeframeSelect.style.display = 'flex';
+        fullBtn.style.display = 'block';
+        monthSelect.innerHTML = ['<option value=""></option>',
+                                 '<option value="Jan">Jan</option>',
+                                 '<option value="Feb">Feb</option>',
+                                 '<option value="Mar">Mar</option>',
+                                 '<option value="Apr">Apr</option>',
+                                 '<option value="May">May</option>',
+                                 '<option value="Jun">Jun</option>',
+                                 '<option value="Jul">Jul</option>',
+                                 '<option value="Aug">Aug</option>',
+                                 '<option value="Sep">Sep</option>',
+                                 '<option value="Oct">Oct</option>',
+                                 '<option value="Nov">Nov</option>',
+                                 '<option value="Dec">Dec</option>'];
+    } else if (event.target === scallopingBtn) {
+        scallopingBtn.style.backgroundColor = 'rgb(102, 255, 0)';
+        fishingBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        timeframeSelect.style.display = 'flex';
+        fullBtn.style.display = 'none';
+        monthSelect.innerHTML = ['<option value=""></option>',
+                                 '<option value="Jul">Jul</option>',
+                                 '<option value="Aug">Aug</option>',
+                                 '<option value="Sep">Sep</option>'];
+    } else if (event.target === fullBtn) {
+        fullBtn.style.backgroundColor = 'rgb(102, 255, 0)';
+        halfBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        dateSelect.style.display = 'flex';
+    } else if (event.target === halfBtn) {
+        halfBtn.style.backgroundColor = 'rgb(102, 255, 0)';
+        fullBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        dateSelect.style.display = 'flex';
+    }
 });
 
-// monthSelect.addEventListener('change', function() {
-//     if (monthSelect.value) {
+monthSelect.addEventListener('change', function() {
+    if (event.target.value === 'Feb') {
+        daySelect.innerHTML = ['<option value=""></option>',
+                               '<option value="1">1</option>',
+                               '<option value="2">2</option>',
+                               '<option value="3">3</option>',
+                               '<option value="4">4</option>',
+                               '<option value="5">5</option>',
+                               '<option value="5">6</option>',
+                               '<option value="7">7</option>',
+                               '<option value="8">8</option>',
+                               '<option value="9">9</option>',
+                               '<option value="10">10</option>',
+                               '<option value="11">11</option>',
+                               '<option value="12">12</option>',
+                               '<option value="13">13</option>',
+                               '<option value="14">14</option>',
+                               '<option value="15">15</option>',
+                               '<option value="16">16</option>',
+                               '<option value="17">17</option>',
+                               '<option value="18">18</option>',
+                               '<option value="19">19</option>',
+                               '<option value="20">20</option>',
+                               '<option value="21">21</option>',
+                               '<option value="22">22</option>',
+                               '<option value="23">23</option>',
+                               '<option value="24">24</option>',
+                               '<option value="25">25</option>',
+                               '<option value="26">26</option>',
+                               '<option value="27">27</option>',
+                               '<option value="28">28</option>'];
+    } else if (event.target.value === 'Jan' || event.target.value === 'Mar' || event.target.value === 'May' || event.target.value === 'Jul' || event.target.value === 'Aug' || event.target.value === 'Oct' || event.target.value === 'Dec') {
+        daySelect.innerHTML = ['<option value=""></option>',
+                               '<option value="1">1</option>',
+                               '<option value="2">2</option>',
+                               '<option value="3">3</option>',
+                               '<option value="4">4</option>',
+                               '<option value="5">5</option>',
+                               '<option value="5">6</option>',
+                               '<option value="7">7</option>',
+                               '<option value="8">8</option>',
+                               '<option value="9">9</option>',
+                               '<option value="10">10</option>',
+                               '<option value="11">11</option>',
+                               '<option value="12">12</option>',
+                               '<option value="13">13</option>',
+                               '<option value="14">14</option>',
+                               '<option value="15">15</option>',
+                               '<option value="16">16</option>',
+                               '<option value="17">17</option>',
+                               '<option value="18">18</option>',
+                               '<option value="19">19</option>',
+                               '<option value="20">20</option>',
+                               '<option value="21">21</option>',
+                               '<option value="22">22</option>',
+                               '<option value="23">23</option>',
+                               '<option value="24">24</option>',
+                               '<option value="25">25</option>',
+                               '<option value="26">26</option>',
+                               '<option value="27">27</option>',
+                               '<option value="28">28</option>',
+                               '<option value="29">29</option>',
+                               '<option value="30">30</option>',
+                               '<option value="31">31</option>'];
+    } else  {
+        daySelect.innerHTML = ['<option value=""></option>',
+                               '<option value="1">1</option>',
+                               '<option value="2">2</option>',
+                               '<option value="3">3</option>',
+                               '<option value="4">4</option>',
+                               '<option value="5">5</option>',
+                               '<option value="5">6</option>',
+                               '<option value="7">7</option>',
+                               '<option value="8">8</option>',
+                               '<option value="9">9</option>',
+                               '<option value="10">10</option>',
+                               '<option value="11">11</option>',
+                               '<option value="12">12</option>',
+                               '<option value="13">13</option>',
+                               '<option value="14">14</option>',
+                               '<option value="15">15</option>',
+                               '<option value="16">16</option>',
+                               '<option value="17">17</option>',
+                               '<option value="18">18</option>',
+                               '<option value="19">19</option>',
+                               '<option value="20">20</option>',
+                               '<option value="21">21</option>',
+                               '<option value="22">22</option>',
+                               '<option value="23">23</option>',
+                               '<option value="24">24</option>',
+                               '<option value="25">25</option>',
+                               '<option value="26">26</option>',
+                               '<option value="27">27</option>',
+                               '<option value="28">28</option>',
+                               '<option value="29">29</option>',
+                               '<option value="30">30</option>'];
+    }
+});
 
-//     }
-// });
+dateSelect.addEventListener('change', function (event) {
+    if (event.target === yearSelect || event.target === monthSelect || event.target === daySelect) {
+        if (event.target.value !== '') {
+            event.target.style.backgroundColor = 'rgb(102, 255, 0)';
+        } else if (event.target.value === '') {
+            event.target.style.backgroundColor = 'rgb(184, 184, 184)';
+        }
+    }
+});
