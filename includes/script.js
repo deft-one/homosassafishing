@@ -114,7 +114,9 @@ function currentImage(n) {
 
 // *************************** CONTACT PAGE ****************************
 
-document.addEventListener('click', function(event) {
+let contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('click', function(event) {
     let questionBtn = document.getElementById('questionBtn');
     let bookBtn = document.getElementById('bookBtn');
     let fullBtn = document.getElementById('fullBtn');
@@ -129,6 +131,9 @@ document.addEventListener('click', function(event) {
     let yearSelect = document.getElementById('yearSelect');
     let monthSelect = document.getElementById('monthSelect');
     let daySelect = document.getElementById('daySelect');
+    let firstInput = document.getElementById('firstInput');
+    let lastInput = document.getElementById('firstInput');
+    let emailInput = document.getElementById('firstInput');
 
     event.preventDefault();
 
@@ -144,31 +149,43 @@ document.addEventListener('click', function(event) {
         if (yearSelect.value !== '' && monthSelect.value !== '' && daySelect.value !== '') {
             inputSection.style.display = 'flex';
         }if (yearSelect.value === '' || monthSelect.value === '' || daySelect.value === '') {
-            inputSection.style.display = 'none';
+            // inputSection.style.display = 'none';
         }
     }
     
     lastStep();
 
-    if (event.target === questionBtn) {
-        questionBtn.style.backgroundColor = 'rgb(102, 255, 0)';
+    function resetForm() {
         bookBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        questionBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        scallopingBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        fishingBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        halfBtn.style.backgroundColor = 'rgb(184, 184, 184)';
+        fullBtn.style.backgroundColor = 'rgb(184, 184, 184)';
         typeSelect.style.display = 'none';
         timeframeSelect.style.display = 'none';
         dateSelect.style.display = 'none';
-        inputSection.style.display = 'flex';
-        submit.innerText = 'Send';
-    } else if (event.target === bookBtn) {
-        bookBtn.style.backgroundColor = 'rgb(102, 255, 0)';
-        questionBtn.style.backgroundColor = 'rgb(184, 184, 184)';
-        typeSelect.style.display = 'flex';
-        timeframeSelect.style.display = 'none';
-        dateSelect.style.display = 'none';
         inputSection.style.display = 'none';
-        submit.innerText = 'Book It!';
+        daySelect.style.backgroundColor = 'rgb(184, 184, 184)';
+        daySelect.innerHTML = '';
+        monthSelect.style.backgroundColor = 'rgb(184, 184, 184)';
+        monthSelect.innerHTML = '';
+        yearSelect.style.backgroundColor = 'rgb(184, 184, 184)';
         yearSelect.innerHTML = ['<option value=""></option>',
                                 '<option value="' + thisYear + '">' + thisYear + '</option>',
                                 '<option value="' + nextYear + '">' + nextYear + '</option>'];
+    }
+
+    if (event.target === questionBtn) {
+        resetForm();
+        questionBtn.style.backgroundColor = 'rgb(102, 255, 0)';
+        inputSection.style.display = 'flex';
+        submit.innerText = 'Send';
+    } else if (event.target === bookBtn) {
+        resetForm();
+        bookBtn.style.backgroundColor = 'rgb(102, 255, 0)';
+        typeSelect.style.display = 'flex';
+        submit.innerText = 'Book It!';
     } else if (event.target === fishingBtn) {
         fishingBtn.style.backgroundColor = 'rgb(102, 255, 0)';
         scallopingBtn.style.backgroundColor = 'rgb(184, 184, 184)';
@@ -314,4 +331,10 @@ dateSelect.addEventListener('change', function (event) {
             event.target.style.backgroundColor = 'rgb(184, 184, 184)';
         }
     }
+});
+
+contactForm.addEventListener('keyup', function(event) {
+    messageBox.innerHTML = 'Hello, my name is ' + firstInput.value + ' ' + lastInput.value + '.\n' +
+                        'You can reach me by email at ' + emailInput.value + '.\n\n' +
+                        'I would like to reserve the following trip:\n\n';
 });

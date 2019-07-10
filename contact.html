@@ -79,10 +79,10 @@
                 <select class="select" name="day" id="daySelect"></select>
               </div>
               <div id="inputSection" class="form-section">
-                <input class="input" name="firstName" type="text" placeholder="first name">
-                <input class="input" name="lastName" type="text" placeholder="last name">
-                <input class="input" name="email" type="email" placeholder="email">
-                <textarea class="input" name="message" id="messageBox" cols="" rows="" placeholder="message..."></textarea>
+                <input id="firstInput" class="input" name="firstName" type="text" placeholder="first name" required>
+                <input id="lastInput" class="input" name="lastName" type="text" placeholder="last name" required>
+                <input id="emailInput" class="input" name="email" type="email" placeholder="email" required>
+                <textarea class="input" name="message" id="messageBox" cols="" rows="20" placeholder="message..."></textarea>
                 <button name="submit" id="submit" class="send-button"></button>
               </div>
             </form>

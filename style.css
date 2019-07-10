@@ -105,6 +105,7 @@ li {
     list-style-type: none;
 }
 .container {
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px auto auto;
@@ -214,7 +215,6 @@ li {
     z-index: 997;
 }
 .content-container {
-    height: 100%;
 }
 .image-container {
     position: relative;
