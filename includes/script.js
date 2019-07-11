@@ -295,7 +295,7 @@ monthSelect.addEventListener('change', function() {
                                '<option value="3">3</option>',
                                '<option value="4">4</option>',
                                '<option value="5">5</option>',
-                               '<option value="5">6</option>',
+                               '<option value="6">6</option>',
                                '<option value="7">7</option>',
                                '<option value="8">8</option>',
                                '<option value="9">9</option>',
@@ -333,8 +333,46 @@ dateSelect.addEventListener('change', function (event) {
     }
 });
 
-contactForm.addEventListener('keyup', function(event) {
-    messageBox.innerHTML = 'Hello, my name is ' + firstInput.value + ' ' + lastInput.value + '.\n' +
-                        'You can reach me by email at ' + emailInput.value + '.\n\n' +
-                        'I would like to reserve the following trip:\n\n';
+function dynamicVariables1() {
+    if (questionBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
+        let option1 = questionBtn.innerText.toLowerCase() + '.';
+        return option1;
+    } else if (bookBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
+        let option1 = bookBtn.innerText.toLowerCase();
+        return option1;
+    }
+}
+
+function dynamicVariables2() {
+    if (fishingBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
+        let option2 = fishingBtn.innerText;
+        return option2;
+    } else if (scallopingBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
+        let option2 = scallopingBtn.innerText;
+        return option2;
+    }
+}
+
+function dynamicVariables3() {
+    if (fullBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
+        let option3 = fullBtn.innerText;
+        return option3;
+    } else if (halfBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
+        let option3 = halfBtn.innerText;
+        return option3;
+    }
+}
+
+contactForm.addEventListener('keyup', function() {
+    if (questionBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
+        messageBox.innerHTML = 'I would like to ' + dynamicVariables1() + '\n\n\n' +
+        firstInput.value + ' ' + lastInput.value + '\n' + emailInput.value;
+    } else if (bookBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
+        messageBox.innerHTML = 'I would like to ' + dynamicVariables1() + '\n\n\n' +
+        'Type: ' + dynamicVariables2() + '\n\n' +
+        'Length: ' + dynamicVariables3() + '\n\n' +
+        'Date: ' + monthSelect.value + ' ' + daySelect.value + ' ' + yearSelect.value + '\n\n\n' +
+        firstInput.value + ' ' + lastInput.value + '\n' + emailInput.value;
+    }
 });
+
