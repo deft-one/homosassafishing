@@ -109,7 +109,7 @@ li {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px auto auto;
-    align-items: flex-end;
+    align-items: flex-start;
     background-image: linear-gradient(rgb(2, 121, 91) 0%, rgb(0, 88, 104) 15%, rgb(0, 16, 19));
     overflow-x: hidden;
     padding-bottom: 15px;
@@ -213,8 +213,6 @@ li {
     max-width: 1000px;
     margin: 0 auto;
     z-index: 997;
-}
-.content-container {
 }
 .image-container {
     position: relative;
@@ -353,6 +351,7 @@ li {
 .footer-container {
     padding-top: 20px;
     width: 100%;
+    align-self: flex-end;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -439,13 +438,9 @@ li {
     font-family: 'Montserrat', sans-serif;
 }
 .rates-flex {
-    display: flex;
-    flex-wrap: wrap;
     text-align: center;
 }
 .rates-half, .rates-full {
-    flex: auto;
-    font-size: 24px;
     letter-spacing: 2px;
 }
 .rates-half {
@@ -457,7 +452,13 @@ li {
 .rates-half-bold, .rates-full-bold {
     display: block;
     padding: 15px 0;
+    font-size: 24px;
     font-weight: bold;
+    text-align: center;
+}
+.rates-full-normal, .rates-half-normal {
+    padding: 0 10px;
+    font-size: 18px;
 }
 .price {
     color: rgb(30, 255, 0);
@@ -474,6 +475,36 @@ li {
 .fishing-label, .scalloping-label, .full-label, .half-label {
     font-weight: bold;
     margin: 10px;
+}
+.images-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(126, 224, 241);
+}
+.item-container {
+    flex: auto;
+    padding: 10px;
+}
+.item-label, .item-descrip {
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 250px;
+    font-weight: bold;
+    background-color: rgb(221, 243, 247);
+}
+.item-label {
+    font-size: 20px;
+}
+.item-image {
+    width: 100%;
+    max-width: 250px;
+}
+.item-descrip {
+    font-size: 16px;
+    font-weight: normal;
 }
 
 /* ************************* CONTACT ***************************** */

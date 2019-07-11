@@ -365,8 +365,7 @@ function dynamicVariables3() {
 
 contactForm.addEventListener('keyup', function() {
     if (questionBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
-        messageBox.innerHTML = 'I would like to ' + dynamicVariables1() + '\n\n\n' +
-        firstInput.value + ' ' + lastInput.value + '\n' + emailInput.value;
+        messageBox.innerHTML = '\n\n\n' + firstInput.value + ' ' + lastInput.value + '\n' + emailInput.value;
     } else if (bookBtn.style.backgroundColor === 'rgb(102, 255, 0)') {
         messageBox.innerHTML = 'I would like to ' + dynamicVariables1() + '\n\n\n' +
         'Type: ' + dynamicVariables2() + '\n\n' +
