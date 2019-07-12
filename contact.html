@@ -50,46 +50,48 @@
         </nav>
       </div>
 
-      <div class="content-container">
-        <div class="title-container">
-          <h1 class="title-container-h1">Reservations</h1>
-        </div>
-        <div class="rates-container">
-            <h2 class="rates-h2">Booking & Questions</h2>
-          <div class="contact-container">
-            <form action="" id="contactForm" class="contact-form">
-              <div id="formSelect" class="form-section-top">
-                <div class="button-prompt">What would you like to do?</div>
-                <button id="questionBtn" class="button">Ask a Question</button>
-                <button id="bookBtn" class="button">Book a Charter!</button>
-              </div>
-              <div id="typeSelect" class="form-section">
-                <div class="button-prompt">Please select a trip type.</div>
-                <button id="fishingBtn" class="button">Fishing Trip</button>
-                <button id="scallopingBtn" class="button">Scalloping Trip</button>
-              </div>
-              <div id="timeframeSelect" class="form-section">
-                <div class="button-prompt">Please select a timeframe.</div>
-                <button id="fullBtn" class="button">Full 8hrs $450</button>
-                <button id="halfBtn" class="button">Half 4hrs $350</button>
-              </div>
-              <div id="dateSelect" class="form-section">
-                <select class="select" name="year" id="yearSelect"></select>
-                <select class="select" name="month" id="monthSelect"></select>
-                <select class="select" name="day" id="daySelect"></select>
-              </div>
-              <div id="inputSection" class="form-section">
-                <input id="firstInput" class="input" name="firstName" type="text" placeholder="first name" required>
-                <input id="lastInput" class="input" name="lastName" type="text" placeholder="last name" required>
-                <input id="emailInput" class="input" name="email" type="email" placeholder="email" required>
-                <textarea class="input" name="message" id="messageBox" cols="" rows="20" placeholder="message..."></textarea>
-                <button name="submit" id="submit" class="send-button"></button>
-              </div>
-            </form>
+      <div class="main-content">
+        <div class="content-container">
+          <div class="title-container">
+            <h1 class="title-container-h1">Reservations</h1>
+          </div>
+          <div class="rates-container">
+              <h2 class="rates-h2">Booking & Questions</h2>
+            <div class="contact-container">
+              <form action="" id="contactForm" class="contact-form">
+                <div id="formSelect" class="form-section-top">
+                  <div class="button-prompt">What would you like to do?</div>
+                  <button id="questionBtn" class="button">Ask a Question</button>
+                  <button id="bookBtn" class="button">Book a Charter!</button>
+                </div>
+                <div id="typeSelect" class="form-section">
+                  <div class="button-prompt">Please select a trip type.</div>
+                  <button id="fishingBtn" class="button">Fishing Trip</button>
+                  <button id="scallopingBtn" class="button">Scalloping Trip</button>
+                </div>
+                <div id="timeframeSelect" class="form-section">
+                  <div class="button-prompt">Please select a timeframe.</div>
+                  <button id="fullBtn" class="button">Full 8hrs $450</button>
+                  <button id="halfBtn" class="button">Half 4hrs $350</button>
+                </div>
+                <div id="dateSelect" class="form-section">
+                  <select class="select" name="year" id="yearSelect"></select>
+                  <select class="select" name="month" id="monthSelect"></select>
+                  <select class="select" name="day" id="daySelect"></select>
+                </div>
+                <div id="inputSection" class="form-section">
+                  <input id="firstInput" class="input" name="firstName" type="text" placeholder="first name" required>
+                  <input id="lastInput" class="input" name="lastName" type="text" placeholder="last name" required>
+                  <input id="emailInput" class="input" name="email" type="email" placeholder="email" required>
+                  <textarea class="input" name="message" id="messageBox" cols="" rows="20" placeholder="message..."></textarea>
+                  <button name="submit" id="submit" class="send-button"></button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-
       </div>  
+      
       <div class="footer-container">
         <div class="logo-bottom">Homosassa Fishing</div>
         <div class="sitemap-container">
@@ -100,12 +102,13 @@
           <span class="sitemap-item"><a href="contact.html" class="sitemap-a">Contact</a></span>
         </div>
         <div class="copyright">
-            Copyright Homosassa Fishing 2019.  Designed by <a class="deftoriginals" href="https://www.deftoriginals.com">deftoriginals</a>.
+          Copyright Homosassa Fishing 2019.  Designed by <a class="deftoriginals" href="https://www.deftoriginals.com">deftoriginals</a>.
         </div>
+        <div id="toTop" class="to-top">&#8593;</div>
       </div>
+    </div>
 
-      <div id="toTop" class="to-top">&#8593;</div>  
-
-  <script src="includes/script.js"></script>
   </body>
+  <script src="includes/menu.js"></script>
+  <script src="includes/contact.js"></script>
 </html>
