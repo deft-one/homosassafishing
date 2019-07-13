@@ -95,6 +95,7 @@ html, body {
     background-color: red;
     overflow-y: auto;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 a {
     text-decoration: none;
@@ -690,11 +691,16 @@ li {
 /* ***************** SCALLOPING ************************************** */
 
 .scallop-img {
-    
+    max-width: 250px;
     margin: 20px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
-
+.gallerySizeUp {
+    animation: gallerySizeUp 250ms ease forwards;
+}
+.gallerySizeDn {
+    animation: gallerySizeDn 250ms ease forwards;
+}
 
 
 /* **************** MEDIA QUERIES & KEYFRAMES ************************* */
@@ -728,7 +734,15 @@ li {
 @keyframes descripHide {
     0% { transform: translate(0, -100%); opacity: 0.99; }
     100% { transform: translate(0, 0); opacity: 0.01; }
-  }
+}
+@keyframes gallerySizeUp {
+    from { max-width: 250px; }
+    to { max-width: 90%; }
+}
+@keyframes gallerySizeDn {
+    from { max-width: 90%; }
+    to { max-width: 250px; }
+}
 
 @media screen and (max-width: 600px) {
     .hide-mobile {
