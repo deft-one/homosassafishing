@@ -568,7 +568,7 @@ li {
     padding: 10px;
     margin: 0 auto;
     font-weight: bold;
-    background-color: rgb(221, 243, 247);
+    background-color: rgba(0, 132, 155, 0.8);
 }
 .item-label {
     white-space: nowrap;
@@ -588,6 +588,7 @@ li {
     font-size: 16px;
     font-weight: normal;
     opacity: 0.01;
+    background-color: rgba(124, 235, 255, 0.8);
 }
 .the-boat1, .the-boat2 {
     width: 40%;
