@@ -344,7 +344,7 @@ li {
     border-right: 2px solid rgb(0, 145, 170);
     color: white;
 }
-.article-h2, .rates-p {
+.article-h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 24px;
@@ -388,7 +388,7 @@ li {
     text-align: center;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     padding: 10px;
     background-color: rgb(235, 219, 83);
     color: rgba(0, 0, 0, 0.733);
@@ -590,17 +590,12 @@ li {
     opacity: 0.01;
     background-color: rgba(124, 235, 255, 0.8);
 }
-.the-boat1, .the-boat2 {
-    width: 40%;
+.the-boat {
+    max-width: 250px;
     float: left;
     clear: left;
-    margin-right: 20px;
-}
-.the-boat1 {
-    max-width: 447px;
-}
-.the-boat2 {
-    max-width: 305px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 .descripDisplay {
     animation: descripDisplay 500ms ease forwards;
