@@ -11,3 +11,10 @@ document.addEventListener('click', function(event) {
         }
     }
 }, false);
+
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('descripDisplay')) {
+        event.target.classList.remove('descripDisplay');
+        event.target.classList.add('descripHide');
+    }
+}, false);

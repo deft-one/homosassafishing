@@ -114,7 +114,7 @@ li {
     overflow-x: hidden;
     padding-bottom: 15px;
 }
-.shark {
+.cobia {
     position: absolute;
       top: 50%;
       left: -520px;
@@ -122,7 +122,7 @@ li {
     max-width: 507px;
     max-height: 199px;
     z-index: 1;
-    animation: sharkMove 1500ms linear forwards 1000ms;
+    animation: cobiaMove 1500ms linear forwards 1000ms;
 }
 .header-container {
     grid-column-start: 1;
@@ -204,6 +204,10 @@ li {
     text-align: right;
     background-color: rgb(89, 158, 152);
     z-index: 999;
+}
+.icon {
+    width: 50px;
+    height: auto;
 }
 .sub-nav > .active {
     font-weight: bold;
@@ -378,6 +382,16 @@ li {
     background-color: rgb(0, 171, 201);
     color: rgba(0, 0, 0, 0.281);
 }
+.licensed {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    background-color: rgb(235, 219, 83);
+    color: rgba(0, 0, 0, 0.733);
+}
 .article-p {
     margin-bottom: 20px;
     padding: 40px 15px;
@@ -484,10 +498,15 @@ li {
     margin: 20px auto;
     font-family: 'Montserrat', sans-serif;
 }
+#fishingP {
+    margin-bottom: 0px;
+}
 .rates-flex {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     text-align: center;
+    background-color: rgb(126, 224, 241);
 }
 .rates-half, .rates-full {
     flex: auto;
@@ -568,6 +587,18 @@ li {
     font-size: 16px;
     font-weight: normal;
     opacity: 0.01;
+}
+.the-boat1, .the-boat2 {
+    width: 40%;
+    float: left;
+    clear: left;
+    margin-right: 20px;
+}
+.the-boat1 {
+    max-width: 447px;
+}
+.the-boat2 {
+    max-width: 305px;
 }
 .descripDisplay {
     animation: descripDisplay 500ms ease forwards;
@@ -656,11 +687,19 @@ li {
     display: none;
 }
 
+/* ***************** SCALLOPING ************************************** */
+
+.scallop-img {
+    
+    margin: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
 
 
 /* **************** MEDIA QUERIES & KEYFRAMES ************************* */
 
-@keyframes sharkMove {
+@keyframes cobiaMove {
     0% { left: -520px; max-width: 507px; max-height: 199px;}
     99% { left: 100%; max-width: 507px; max-height: 199px;}
     100% { left: 101%; max-width: 0px; max-height: 0px;}
